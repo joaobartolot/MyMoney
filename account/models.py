@@ -9,7 +9,8 @@ class Account_Type(models.Model):
         return f'{self.name}'
 
     class Meta:
-        db_table = "account_type"
+        verbose_name = 'Account Type'
+        db_table = 'account_type'
 
 class Bank(models.Model):
     name = models.CharField(max_length=20)
@@ -20,7 +21,8 @@ class Bank(models.Model):
         return f'{self.name}'
 
     class Meta:
-        db_table = "bank"
+        verbose_name = 'Bank'
+        db_table = 'bank'
 
 class Account(models.Model):
     name = models.CharField(max_length=20)
@@ -34,4 +36,5 @@ class Account(models.Model):
         return f'{self.name}({self.balance}), user: {self.user}'
 
     class Meta:
-        db_table = "account"
+        verbose_name = 'Account'
+        db_table = 'account'
