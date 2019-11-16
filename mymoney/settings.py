@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'expense.apps.ExpenseConfig',
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
