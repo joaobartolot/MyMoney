@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+        {% if title %}
+            <title>My Money - {{ title }}</title>
+        {% else %}
+            <title>My Money</title>
+        {% endif %}
+		
+
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/font-awesome.min.css' %}">
+
+		<!-- jQuery -->
+		<script src="{% static 'jquery/jquery3.4.1.js' %}"></script>
+
+		<!-- jQuery -->
+		<script src="{% static 'angularjs/angular1.7.8.js' %}"></script>
+
+		<!-- Glide.js CSS and JS CDN -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.3.0/css/glide.core.min.css" integrity="sha256-Ev8y2mML/gGa4LFVZgNpMTjKwj34q4pC4DcseWeRb9w=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.3.0/css/glide.theme.min.css" integrity="sha256-sw/JiPOV1ZfcXjqBJT1vqaA4vBGeiqn+b7PDhVv4OA4=" crossorigin="anonymous"/>
+
+		<!-- Cleave.js CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.3/cleave.min.js" integrity="sha256-yx/X2dD86fWz9OyQ/ZnQH8BQaS5Ta4OuNJICU17rySE=" crossorigin="anonymous"></script>
+
+
+		<!-- Fonts -->
+		<!-- Nunito --> <link href="https://fonts.googleapis.com/css?family=Nunito:400,600&display=swap" rel="stylesheet">
+
+
+		<link rel='stylesheet' href='{% static 'css/main.css' %}'>
+        <!--
+
+		<link rel='shortcut icon' href='{% static 'images/favicon.ico' %}' type='image/x-icon'>
+
+		<script type='text/javascript' src='{% static 'js/main_jquery.js' %}'></script>
+
+        -->
+	<script src="{% static 'js/loader.js' %}"></script>
+	<script src="{% static 'js/tokens.js' %}"></script>
+
+	</head>
+	<body>
+		<header>
+			<nav class='navbar navbar-expand-md navbar-dark nav-color' role='navigation' id='navMenu'>
+				<div class='container'>
+					<a class='navbar-brand ml-3' href='#'>
+                        My Money
+					</a>
+
+					<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarToggled' aria-controls='navbarToggled' aria-expanded='false'>
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+					</button>
+
+					<div class='collapse navbar-collapse' id='navbarToggled'>
+						<ul class='navbar-nav ml-auto'>
+							{% if user.is_authenticated %}
+								<li class='nav-item'>
+									<a class='nav-link' href='#'>Charts</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='#'>Accounts</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='#'>Expenses</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='#'>Profile</a>
+								</li>
+								<li class='nav-item'>
+									<a class='nav-link' href='#'>Logout</a>
+								</li>
+
+							{% else %}
+								<li class="nav-item">
+									<a href="#" class="nav-link">Login</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">Sign Up</a>
+								</li>
+							{% endif %}
+
+							<!-- Phone Navbar
+
+							<li class='nav-item'>
+								<a class='nav-link' href='#'><i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i></a>
+							</li>
+							<li class='nav-item'>
+								<a class='nav-link' href='#'><i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></a>
+							</li>
+							<li class='nav-item'>
+								<a class='nav-link' href='#'><i class="fa fa-user fa-lg" aria-hidden="true"></i></a>
+							</li>
+							-->
+						</ul>
+					</div>
+			</nav>
+		</header>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.3.0/glide.min.js" integrity="sha256-ujmfLA8r9ntmbatq60vOH954kngGJ5sMYn1LMq54Oto=" crossorigin="anonymous"></script>
+
+		<div class="loader">
+			<div class='ball' ></div>
+			<div class='ball' ></div>
+			<div class='ball' ></div>
+		</div>
+		<main role='main'>
+			<div class='container mt-3 mb-xs-4'>
+				{% block content %}
+				{% endblock content %}
+			</div>
+		</main>
+
+  	<script src="{% static 'bootstrap/js/bootstrap.popper.min.js'%}"></script>
+  	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+	</body>
+</html>
