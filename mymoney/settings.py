@@ -142,3 +142,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # crispy forms type
 CRISPY_TEMPLATE_PACK='bootstrap4'
+
+LOGIN_REDIRECT_URL = 'home' # url that the user is redirected to when he log in
+LOGIN_URL = 'login'

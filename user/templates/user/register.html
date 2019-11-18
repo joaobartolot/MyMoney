@@ -1,10 +1,6 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% load static %} {% block content %}
 <script src="{% static 'js/registration.js' %}"></script>
-<form
-  method="POST"
-  ng-app="RegistrationApp"
-  ng-controller="RegistrationController"
->
+<form method="POST">
   <fieldset class="form-group mt-2">
     {% csrf_token %}
     <legend class="border-bottom">Register</legend>
@@ -12,12 +8,12 @@
   </fieldset>
 
   <div class="form-group">
-    <button class="btn btn-success" ng-click="makeRequest()">Register</button>
+    <button class="btn btn-success">Register</button>
   </div>
 </form>
 
 <div class="mt-2 border-top">
   <small class="text-muted">Already have an account?</small>
-  <small class="text-muted"><a href="#">Login</a></small>
+  <small class="text-muted"><a href="{% url 'login' %}">Login</a></small>
 </div>
 {% endblock content %}
