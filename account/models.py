@@ -30,7 +30,18 @@ class Account(models.Model):
     initial_balance = models.IntegerField()
     salary = models.FloatField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, on_delete=models.CASCADE)
     account_type = models.ForeignKey(Account_Type, on_delete=models.CASCADE)
+
+    @property
+    def getCardImg(self):
+        cardImg = ''
+        if(self.bank.id == 1):
+            cardImg = 'nubankCard.png'
+        if(self.bank.id == 2):
+            cardImg = 'santanderCard.png'
+
+        return cardImg
 
     def __str__(self):
         return f'{self.name}({self.balance}), user: {self.user}'

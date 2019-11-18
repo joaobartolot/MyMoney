@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+{% comment %} <script src="{% static 'home/GlideControl.js' %}"></script> {% endcomment %}
+
+<script src="{% static 'home/HomeApp.js' %}"></script>
+<!-- Slide cards -->
+<div ng-app='HomeApp' ng-controller='HomeController'>
+  <div class="row d-flex align-items-center">
+    <div class="col-1">
+      <button class="btn" id="leftArrow">
+        <img
+          src="{% static 'icons/left-arrow.png' %}"
+          width="16px"
+          height="30px"
+        />
+      </button>
+    </div>
+    <div class="glide mt-3 col-10">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides" ng-repeat='item in list'>
+          <li class="glide__slide">
+            <a href="#"> {% comment %}{% url 'account-detail' account.pk %}{% endcomment %}
+              <img
+                ng-src="static/images/cards/[{ item.cardImg }]"
+                width="90%"
+                id="card-img"
+                alt="money"
+                data-pk="[{ item.id }]"
+                style="border-radius: 0"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-1">
+      <button class="btn" id="rightArrow">
+        <img
+          src="{% static 'icons/right-arrow.png' %}"
+          width="16px"
+          height="30px"
+        />
+      </button>
+    </div>
+  </div>
+
+  <div class="dot-container">
+    <div class="dot"></div>
+  </div>
+
+  <!-- End of the slides -->
+
+  <!-- Accounts informations -->
+
+  <div class="account_info mt-4"> {% comment %} data-pk {% endcomment %}
+    <div class="row justify-content-center justify-content-md-between">
+      <div class="col-md-8 expense-list-group">
+        {% comment %} Loop for the expenses {% endcomment %}
+        <div class="expense-list-item">
+          <div class="item-info" style="width: 50%">
+            <h5 class="info-label">Name</h5>
+            <h6>
+              {% comment %} Expense name {% endcomment %}
+            </h6>
+          </div>
+
+          <div class="item-info" style="border-right: 0; width: 50%">
+            <h5 class="info-label">Price</h5>
+            <h6>
+              {% comment %} Expense price {% endcomment %}
+            </h6>
+          </div>
+        </div>
+        {% comment %} End for {% endcomment %}
+      </div>
+      {% comment %} If account don't have any expense {% endcomment %}
+      <div class="col-md-8 none-expense">
+        <img src='{% static 'icons/info-circle.svg' %}' width='34px'
+        height='34px'>
+        <h4>You Don't have any expense in this account!</h4>
+      </div>
+
+      <div class="col-md-3 info-container">
+        <div class="info-header">
+          <h4>
+            Account Info
+          </h4>
+        </div>
+        <div class="info-body">
+          <div class="info-element">
+            <h5 class="info-label">Balance</h5>
+            <h6 class="info-component">
+              {% comment %} Account Balance {% endcomment %}
+            </h6>
+          </div>
+          <div class="info-element">
+            <h5 class="info-label">Name</h5>
+            <h6 class="info-component">
+              {% comment %} Account name {% endcomment %}
+            </h6>
+          </div>
+          <div class="info-element">
+            <h5 class="info-label">Expenses</h5>
+            <h6 class="info-component">
+              {% comment %} Total expenses {% endcomment %}
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main js for home -->
+  {% comment %} If user don't have Account {% endcomment %}
+  <div class="row d-flex justify-content-center">
+    <h3><strong class="col-3">You don't Have any account</strong></h3>
+  </div>
+</div>
+
+{% endblock content %}
