@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-{% comment %} <script src="{% static 'home/GlideControl.js' %}"></script> {% endcomment %}
 
+<script src="{% static 'home/GlideControl.js' %}"></script>
 <script src="{% static 'home/HomeApp.js' %}"></script>
+
 <!-- Slide cards -->
 <div ng-app='HomeApp' ng-controller='HomeController'>
   <div class="row d-flex align-items-center">
@@ -16,22 +17,16 @@
       </button>
     </div>
     <div class="glide mt-3 col-10">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides" ng-repeat='item in list'>
-          <li class="glide__slide">
-            <a href="#"> {% comment %}{% url 'account-detail' account.pk %}{% endcomment %}
-              <img
-                ng-src="static/images/cards/[{ item.cardImg }]"
-                width="90%"
-                id="card-img"
-                alt="money"
-                data-pk="[{ item.id }]"
-                style="border-radius: 0"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
+			<div ng-repeat='item in list' class="owl-item">
+				<a href="#"> {% comment %}{% url 'account-detail' account.pk %}{% endcomment %}
+					<img
+						ng-src="static/images/cards/[{ item.cardImg }]"
+						id="card-img"
+						alt="money"
+						data-pk="[{ item.id }]"
+					/>
+				</a>
+			</div>
     </div>
     <div class="col-1">
       <button class="btn" id="rightArrow">

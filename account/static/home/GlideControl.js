@@ -1,76 +1,76 @@
-$(document).ready(function() {
-  // Begin of the glider
-  var myGlide = new Glide(".glide", {
-    focusAt: "center",
-    startAt: 0,
-    perView: 3,
-    rewind: false,
-    breakpoints: {
-      1200: {
-        perView: 2
-      },
-      700: {
-        perView: 1
-      }
-    }
-  });
+// Begin of the glider
+$(document).ready(function () {
+	$('.glide').owlCarousel({
+		center: true,
+		items:2,
+		loop:false,
+		margin:10,
+		responsive:{
+			600:{
+				items:4
+			}
+		}
+	});
+})
 
-  myGlide.on("move.after", function() {
-    var currentSlide = document.getElementsByClassName("glide__slide")[
-      myGlide.index
-    ];
-    var currentImg = currentSlide.getElementsByTagName("img")[0];
+// $(document).ready(function () {
+// 	myGlide.on("move.after", function() {
+// 		var currentSlide = $(".glide__slide")[myGlide.index];
+// 		console.log(currentSlide)
 
-    var accountInfo = document.getElementsByClassName("account_info");
+// 		var currentImg = $("." + currentSlide.classList[0] + " img:first-of-type")[0];
 
-    // Display current account selected information
-    for (var item of accountInfo) {
-      var sectionPk = item.getAttribute("data-pk");
+// 		var accountInfo = $("account_info");
 
-      if (sectionPk == currentImg.getAttribute("data-pk")) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    }
+// 		// Display current account selected information
+// 		for (var item of accountInfo) {
+// 			var sectionPk = item.attr("data-pk");
 
-    let dot = document.querySelectorAll(".dot");
+// 			if (sectionPk == currentImg.attr("data-pk")) {
+// 				item.css("display", "block")
+// 			} else {
+// 				item.css("display", "none")
+// 			}
+// 		}
 
-    dot.forEach((element, index) => {
-      console.log(myGlide.index);
-      if (index === myGlide.index) {
-        dot[index].classList.add("active");
-      } else {
-        dot[index].classList.remove("active");
-      }
-    });
-  });
+// 		let dot = $(".dot");
 
-  document.getElementById("rightArrow").addEventListener("click", function() {
-    myGlide.go(">");
-  });
-  document.getElementById("leftArrow").addEventListener("click", function() {
-    myGlide.go("<");
-  });
+// 		for(let index in dot) {
+// 			if (index === myGlide.index) {
+// 				dot.eq(index).addClass("active");
+// 			} else {
+// 				dot.eq(index).removeClass("active");
+// 			}
+// 		}
 
-  let dots = document.querySelectorAll(".dot");
-  let activeButton = document.querySelector(".active");
+// 	});
 
-  dots.forEach((element, index) => {
-    element.addEventListener("click", () => {
-      console.log(activeButton);
-      if (activeButton) {
-        activeButton.classList.remove("active");
-      }
+// 	document.getElementById("rightArrow").addEventListener("click", function() {
+// 		myGlide.go(">");
+// 	});
+// 	document.getElementById("leftArrow").addEventListener("click", function() {
+// 		myGlide.go("<");
+// 	});
 
-      element.classList.add("active");
-      activeButton = element;
+// 	let dots = document.querySelectorAll(".dot");
+// 	let activeButton = document.querySelector(".active");
 
-      myGlide.go("=" + index);
-    });
-  });
+// 	dots.forEach((element, index) => {
+// 		element.addEventListener("click", () => {
+// 			console.log(activeButton);
+// 			if (activeButton) {
+// 				activeButton.classList.remove("active");
+// 			}
 
-  myGlide.mount();
+// 			element.classList.add("active");
+// 			activeButton = element;
 
-  // End of the glide
-});
+// 			myGlide.go("=" + index);
+// 		});
+// 	});
+
+// 	myGlide.mount();
+// 	console.log(myGlide)
+
+// 	// End of the glide
+// })

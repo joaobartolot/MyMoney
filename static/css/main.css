@@ -105,6 +105,7 @@ html body {
 }
 
 #card-img {
+  width: auto;
   margin-bottom: 3px;
   box-shadow: 1px 2px 3px #949494;
   border-radius: 7px;

@@ -35,11 +35,7 @@ class Account(models.Model):
 
     @property
     def getCardImg(self):
-        cardImg = ''
-        if(self.bank.id == 1):
-            cardImg = 'nubankCard.png'
-        if(self.bank.id == 2):
-            cardImg = 'santanderCard.png'
+        cardImg = self.bank.name + '.png'
 
         return cardImg
 
