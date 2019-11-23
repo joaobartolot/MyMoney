@@ -5,19 +5,10 @@
 <script src="{% static 'home/HomeApp.js' %}"></script>
 
 <!-- Slide cards -->
-<div ng-app='HomeApp' ng-controller='HomeController'>
+<div class="content" ng-app='HomeApp' ng-controller='HomeController'>
   <div class="row d-flex align-items-center">
-    <div class="col-1">
-      <button class="btn" id="leftArrow">
-        <img
-          src="{% static 'icons/left-arrow.png' %}"
-          width="16px"
-          height="30px"
-        />
-      </button>
-    </div>
-    <div class="glide mt-3 col-10">
-			<div ng-repeat='item in list' class="owl-item">
+		<data-owl-carousel class="owl-carousel" data-options="owlCarouselConfig">
+			<div owl-carousel-item="" ng-repeat='item in list'>
 				<a href="#"> {% comment %}{% url 'account-detail' account.pk %}{% endcomment %}
 					<img
 						ng-src="static/images/cards/[{ item.cardImg }]"
@@ -27,18 +18,7 @@
 					/>
 				</a>
 			</div>
-    </div>
-    <div class="col-1">
-      <button class="btn" id="rightArrow">
-        <img
-          src="{% static 'icons/right-arrow.png' %}"
-          width="16px"
-          height="30px"
-        />
-      </button>
-    </div>
-  </div>
-
+		</data-owl-carousel>
   <div class="dot-container">
     <div class="dot"></div>
   </div>

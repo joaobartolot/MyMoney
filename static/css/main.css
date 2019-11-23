@@ -281,6 +281,11 @@ div #leftArrow {
 }
 
 @media (max-width: 767px) {
+  #card-img {
+    width: 80%
+  }
+
+@media (max-width: 767px) {
   .image {
     width: 60%
   }

@@ -1,17 +1,6 @@
 // Begin of the glider
 $(document).ready(function () {
-	$('.glide').owlCarousel({
-		center: true,
-		items:2,
-		loop:false,
-		margin:10,
-		responsive:{
-			600:{
-				items:4
-			}
-		}
-	});
-})
+	$('.glide')})
 
 // $(document).ready(function () {
 // 	myGlide.on("move.after", function() {
