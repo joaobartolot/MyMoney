@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'api.apps.ApiConfig',
     'user.apps.UserConfig',
-
-    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -122,16 +120,6 @@ AUTH_PASSWORD_VALIDATORS = [
 #         'rest_framework.permissions.IsAuthenticated',
 #     ),
 # }
-
-STATICFILES_FINDERS = [
-    'compressor.finders.CompressorFinder',
-]
-
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-    ('text/x-sass', 'django_libsass.SassCompiler'),
-
-)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
