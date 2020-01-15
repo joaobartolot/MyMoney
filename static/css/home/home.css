@@ -1,0 +1,13 @@
+.no-account-warning {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.account-info {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

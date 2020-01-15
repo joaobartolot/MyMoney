@@ -1,39 +1,40 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
+<link rel="stylesheet" href="{% static "css/home/home.css" %}" >
+
 <script src="{% static 'home/HomeApp.js' %}"></script>
 <script src="{% static 'home/CarouselConfig.js' %}"></script>
 
 <!-- Slide cards -->
 <div class="content" ng-app="HomeApp" ng-controller="HomeController">
   <div class="row d-flex align-items-center">
-    <data-owl-carousel class="owl-carousel" data-options="owlCarouselConfig">
+    <data-owl-carousel class="owl-carousel" data-options="owlCarouselConfig" ng-show="haveAccount">
       <div
         class="d-flex justify-content-center align-content-center"
         owl-carousel-item=""
-        ng-repeat="item in list"
+        ng-repeat="account in list"
       >
         <a href="#">
           {% comment %}{% url 'account-detail' account.pk %}{% endcomment %}
           <img
-            ng-src="static/images/cards/[{ item.cardImg }]"
+            ng-src="static/images/cards/[{ account.cardImg }]"
             id="card-img"
             alt="money"
-            data-pk="[{ item.id }]"
+            data-pk="[{ account.id }]"
           />
         </a>
       </div>
     </data-owl-carousel>
-    <div class="dot-container">
-      <div class="dot"></div>
+    <div class="dot-container" ng-show="haveAccount">
+      <div class="dot" ng-repeat="account in list"></div>
     </div>
 
     <!-- End of the slides -->
 
     <!-- Accounts informations -->
-
-    <div class="account_info mt-4">
+    <div class="account-info" ng-show="haveAccount">
       {% comment %} data-pk {% endcomment %}
-      <div class="row justify-content-center justify-content-md-between">
+      <div class="row justify-content-center justify-content-md-between" ng-repeat="account in list" ng-show="account.isSelected">
         <div class="col-md-8 expense-list-group">
           {% comment %} Loop for the expenses {% endcomment %}
           <div class="expense-list-item">
@@ -54,7 +55,7 @@
           {% comment %} End for {% endcomment %}
         </div>
         {% comment %} If account don't have any expense {% endcomment %}
-        <div class="col-md-8 none-expense">
+        <div class="col-md-8 none-expense" ng-show="false">
           <img src='{% static 'icons/info-circle.svg' %}' width='34px'
           height='34px'>
           <h4>You Don't have any expense in this account!</h4>
@@ -71,16 +72,18 @@
               <h5 class="info-label">Balance</h5>
               <h6 class="info-component">
                 {% comment %} Account Balance {% endcomment %}
+                [{ account.balanceText }]
               </h6>
             </div>
             <div class="info-element">
               <h5 class="info-label">Name</h5>
               <h6 class="info-component">
+                [{ account.name }]
                 {% comment %} Account name {% endcomment %}
               </h6>
             </div>
             <div class="info-element">
-              <h5 class="info-label">Expenses</h5>
+              <h5 class="info-label">Total Expenses</h5>
               <h6 class="info-component">
                 {% comment %} Total expenses {% endcomment %}
               </h6>
@@ -92,7 +95,7 @@
 
     <!-- Main js for home -->
     {% comment %} If user don't have Account {% endcomment %}
-    <div class="row d-flex justify-content-center">
+    <div class="no-account-warning" ng-show="!haveAccount">
       <h3><strong class="col-3">You don't Have any account</strong></h3>
     </div>
   </div>

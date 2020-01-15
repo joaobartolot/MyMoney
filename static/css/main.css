@@ -82,10 +82,6 @@ html body {
   background: #254499;
 }
 
-.account_info {
-  display: none;
-}
-
 .header {
 	width: 100%;
 	padding: 0;
@@ -96,7 +92,7 @@ html body {
 }
 
 .nav-color {
-  background: #0a506f;
+  background: #0a506f !important;
 }
 
 
@@ -128,17 +124,18 @@ div #leftArrow {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #353d4a;
+	background: #0a506f !important;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
-  color: #ebebeb;
+  color: rgba(255, 255, 255, 0.5);
 	padding-top: 3%;
 	padding-bottom: 2%;
 	margin-bottom: 0;
 }
 
 .info-header h4 {
-	width: auto;
+  width: auto;
+  margin: 0;
 }
 
 .info-body {
