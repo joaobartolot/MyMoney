@@ -40,9 +40,11 @@ html body {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -64,8 +66,8 @@ html body {
   display: flex;
   justify-content: center;
   align-items: center;
-	height: 20px;
-	width: 100%;
+  height: 20px;
+  width: 100%;
 }
 
 .dot {
@@ -83,12 +85,12 @@ html body {
 }
 
 .header {
-	width: 100%;
-	padding: 0;
-	padding-left: 10px;
-	margin: 0;
-	margin-bottom: 2rem;
-	border-bottom: 1px solid #d9d9d9;
+  width: 100%;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .nav-color {
@@ -110,27 +112,28 @@ html body {
 div #rightArrow {
   background: transparent;
 }
+
 div #leftArrow {
   background: transparent;
 }
 
 @media (max-width: 767px) {
-	.info-container {
-		margin-top: 15px;
-	}
+  .info-container {
+    margin-top: 15px;
+  }
 }
 
 .info-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #0a506f !important;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a506f !important;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   color: rgba(255, 255, 255, 0.5);
-	padding-top: 3%;
-	padding-bottom: 2%;
-	margin-bottom: 0;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  margin-bottom: 0;
 }
 
 .info-header h4 {
@@ -139,15 +142,15 @@ div #leftArrow {
 }
 
 .info-body {
-	border: 1px solid #d9d9d9;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
+  border: 1px solid #d9d9d9;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .info-element {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .info-label {
@@ -155,7 +158,7 @@ div #leftArrow {
 }
 
 .info-component {
-	margin-left: 7%;
+  margin-left: 7%;
 }
 
 .item-info {
@@ -170,26 +173,26 @@ div #leftArrow {
 }
 
 .item-info:nth-child(2) {
-	border-left: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
   border-right: 1px solid #d9d9d9;
   width: 30%;
 }
 
 .item-info.no-border-right {
-	border-right: 0;
-	width: 50%;
+  border-right: 0;
+  width: 50%;
 }
 
 .expense-list {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .expense-list-group {
-	display: flex;
-	flex-flow: column;
-	justify-content: space-between;
-	border: 1px solid #d9d9d9;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border: 1px solid #d9d9d9;
   border-radius: 4px;
   padding: 0;
   height: 100%;
@@ -200,12 +203,12 @@ div #leftArrow {
 }
 
 .expense-list-item {
-	display: flex;
-	justify-content: space-around;
-	padding-bottom: 3px;
-	border-bottom: 1px solid #d9d9d9;
-	padding-top: 10px;
-	padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #d9d9d9;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .expense-list-item:last-child {
@@ -215,7 +218,7 @@ div #leftArrow {
 }
 
 .expense-list-item:hover {
-	background: #f6f6f6
+  background: #f6f6f6
 }
 
 .sign {
@@ -233,30 +236,33 @@ div #leftArrow {
   opacity: 0;
   height: 0;
 }
-@keyframes caretUp{
-    0%{
-        transform: rotate(0) translatey(0);
-        }
-    100%{
-        transform: rotate(180deg) translatey(0);
-        }
+
+@keyframes caretUp {
+  0% {
+    transform: rotate(0) translatey(0);
+  }
+
+  100% {
+    transform: rotate(180deg) translatey(0);
+  }
 }
 
-@keyframes caretDown{
-    0%{
-        transform: rotate(180deg) translatey(0);
-        }
-    100%{
-        transform: rotate(0) translatey(0);
-        }
+@keyframes caretDown {
+  0% {
+    transform: rotate(180deg) translatey(0);
+  }
+
+  100% {
+    transform: rotate(0) translatey(0);
+  }
 }
 
 #caretIcon.down {
-    animation: caretDown 0.3s forwards 0s ease-in;
+  animation: caretDown 0.3s forwards 0s ease-in;
 }
 
 #caretIcon.up {
-    animation: caretUp 0.3s forwards 0s ease-in;
+  animation: caretUp 0.3s forwards 0s ease-in;
 }
 
 #infoCollapse.show {
@@ -264,7 +270,7 @@ div #leftArrow {
   height: auto;
 }
 
-@media (min-width: 769px){
+@media (min-width: 769px) {
   #toggler {
     display: none;
   }
@@ -282,243 +288,245 @@ div #leftArrow {
     width: 80%
   }
 
-@media (max-width: 767px) {
-  .image {
-    width: 60%
+  @media (max-width: 767px) {
+    .image {
+      width: 60%
+    }
+
+    div #rightArrow {
+      display: none;
+    }
+
+    div #leftArrow {
+      display: none;
+    }
   }
 
-  div #rightArrow {
+  @media (min-width: 320px) and (max-width: 460px) {
+    div #rightArrow {
+      display: none;
+    }
+
+    div #leftArrow {
+      display: none;
+    }
+  }
+
+  a.plus {
+    font-weight: 600;
+    font-size: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+    border: none;
+  }
+
+  .cardContainer {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    padding: 3%;
+    padding-top: 0;
+  }
+
+  .cardContainer .cardImg {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-top: 10px;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: start;
+    margin-top: 5%;
+    margin-left: 3%;
+  }
+
+  .cardBody .cardBalance {
+    margin-left: 7%;
+  }
+
+  .none-expense {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .none-expense img {
+    margin: 5%;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  .icon-link {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .icon-link:first-child {
+    margin-left: 3px;
+  }
+
+  .icon-link:last-child {
+    margin-right: 3px;
+  }
+
+  .delete-header {
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  .delete-info-container {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5%;
+  }
+
+  .delete-info-container div {
+    width: auto;
+    height: auto;
+  }
+
+  .delete-info-container .info-label {
+    font-weight: 600;
+  }
+
+  .delete-btn-container {
+    margin-top: 5%;
+  }
+
+  .delete-button {
+    margin-left: 1%;
+    font-weight: 600;
+    border: 1px solid #a52019;
+    border-radius: 5px;
+    padding: 4px 10px;
+    background: none;
+    color: #a52019;
+  }
+
+  a.delete-button {
+    text-decoration: none;
+  }
+
+  .account-button-container a.delete-button {
+    margin: 0;
+  }
+
+  .delete-button:hover {
+    background: #a52019;
+    color: white;
+  }
+
+  a.delete-button:hover {
+    text-decoration: none;
+  }
+
+  .cancel-button {
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #595959;
+    border-radius: 5px;
+    padding: 5px 3px;
+    cursor: pointer;
+    color: #595959;
+  }
+
+  .cancel-button:hover {
+    text-decoration: none;
+    color: white;
+    background: #595959;
+  }
+
+  .update-button {
+    text-decoration: none;
+    margin-left: 1%;
+    font-weight: 600;
+    border: 1px solid #3968C5;
+    border-radius: 5px;
+    padding: 4px 10px;
+    background: none;
+    color: #3968C5;
+  }
+
+  .update-button:hover {
+    text-decoration: none;
+    background: #3968C5;
+    color: white;
+  }
+
+  .account-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .button-container a {
+    margin-left: 10px;
+    padding: 6px 10px;
+  }
+
+  .list-and-info {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 800px) {
+    .list-and-info {
+      justify-content: space-between;
+    }
+  }
+
+  #div_id_bank_name {
     display: none;
   }
-  div #leftArrow {
+
+  #div_id_card_name {
     display: none;
   }
-}
 
-@media (min-width: 320px) and (max-width: 460px){
-  div #rightArrow {
-    display: none;
+  #id_name:invalid {
+    border-color: red;
   }
-  div #leftArrow {
-    display: none;
+
+  #id_account_type:invalid {
+    border-color: red;
   }
-}
 
-a.plus {
-  font-weight: 600;
-  font-size: 100%;
-  padding-bottom: 0;
-  padding-top: 0;
-  border: none;
-}
+  #id_balance:invalid {
+    border-color: red;
+  }
 
-.cardContainer {
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 10px;
-  padding: 3%;
-	padding-top: 0;
-}
+  #id_name:focus:invalid {
+    outline: none;
+  }
 
-.cardContainer .cardImg {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+  #id_balance:focus:invalid {
+    outline: none;
+  }
 
-.cardHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid rgb(221, 221, 221);
-  padding-top: 10px;
-}
-
-.cardBody {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  justify-content: start;
-  margin-top: 5%;
-  margin-left: 3%;
-}
-
-.cardBody .cardBalance {
-  margin-left: 7%;
-}
-
-.none-expense {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.none-expense img {
-	margin: 5%;
-}
-
-.icon-container {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 0.75rem;
-	padding-bottom: 0.15rem;
-	border-bottom: 1px solid rgb(221, 221, 221);
-}
-
-.icon-link {
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.icon-link:first-child {
-	margin-left: 3px;
-}
-
-.icon-link:last-child {
-	margin-right: 3px;
-}
-
-.delete-header {
- border-bottom: 1px solid rgb(221, 221, 221);
-}
-
-.delete-info-container {
- display: flex;
- justify-content: space-around;
- border: 1px solid rgb(221, 221, 221);
- border-radius: 10px;
- padding: 10px;
- margin-top: 5%;
-}
-
-.delete-info-container div {
-	width: auto;
-	height: auto;
-}
-
-.delete-info-container .info-label {
-  font-weight: 600;
-}
-
-.delete-btn-container {
-	margin-top: 5%;
-}
-
-.delete-button {
-	margin-left: 1%;
-	font-weight: 600;
-	border: 1px solid #a52019;
-	border-radius: 5px;
-	padding: 4px 10px;
-	background: none;
-	color: #a52019;
-}
-
-a.delete-button {
-	text-decoration: none;
-}
-
-.account-button-container a.delete-button {
-	margin: 0;
-}
-
-.delete-button:hover {
-	background: #a52019;
-	color: white;
-}
-
-a.delete-button:hover {
-	text-decoration: none;
-}
-
-.cancel-button {
-	text-decoration: none;
-	font-weight: 600;
-	border: 1px solid #595959;
-	border-radius: 5px;
-	padding: 5px 3px;
-	cursor: pointer;
-	color: #595959;
-}
-
-.cancel-button:hover {
-	text-decoration: none;
-	color: white;
-	background: #595959;
-}
-
-.update-button {
-	text-decoration: none;
-	margin-left: 1%;
-	font-weight: 600;
-	border: 1px solid #3968C5;
-	border-radius: 5px;
-	padding: 4px 10px;
-	background: none;
-	color: #3968C5;
-}
-
-.update-button:hover {
-	text-decoration: none;
-	background: #3968C5;
-	color: white;
-}
-
-.account-button-container {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 1rem;
-}
-
-.button-container {
-	display: flex;
-	align-items: center;
-}
-
-.button-container a {
-	margin-left: 10px;
-	padding: 6px 10px;
-}
-
-.list-and-info {
-	display: flex;
-	justify-content: center;
-}
-
-@media (min-width: 800px) {
-	.list-and-info {
-		justify-content: space-between;
-	}
-}
-
-#div_id_bank_name {
-	display: none;
-}
-
-#div_id_card_name {
-	display: none;
-}
-
-#id_name:invalid {
-	border-color: red;
-}
-
-#id_account_type:invalid {
-	border-color: red;
-}
-
-#id_balance:invalid {
-	border-color: red;
-}
-
-#id_name:focus:invalid {
-	outline: none;
-}
-
-#id_balance:focus:invalid {
-	outline: none;
-}
-
-#id_account_type:focus:invalid {
-	outline: none;
-}
+  #id_account_type:focus:invalid {
+    outline: none;
+  }
